@@ -1,0 +1,10 @@
+<div class="d-flex gap-20 flex-direction-column">
+  <ng-content></ng-content>
+  <div class="d-flex gap-20 justify-content-center">
+    <app-select-difficulty
+      [difficulties]="sudokuStore.difficulty()"
+      (onChangeDifficulty)="selectedDifficulty = $event"
+    ></app-select-difficulty>
+  </div>
+  <button class="button" (click)="onClickNewGame()">{{ createGameLabel()}}</button>
+</div>

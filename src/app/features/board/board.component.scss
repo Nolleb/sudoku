@@ -1,0 +1,14 @@
+.board {
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.digit-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1Fr;
+  gap: 20px;
+}

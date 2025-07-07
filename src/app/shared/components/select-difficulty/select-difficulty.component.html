@@ -1,0 +1,21 @@
+<div class="difficulty-options d-inline-flex gap-20">
+  @for(item of difficulties(); track item) {
+    <label
+      class="difficulty-btn"
+      [class.selected]="selectedValue() === item.value"
+      tabindex="0"
+    >
+      <input
+        class="input-hidden"
+        type="radio"
+        name="options"
+        id="{{ item.value }}"
+        [value]="item.value"
+        [checked]="selectedValue() === item.value"
+        (change)="selectDifficulty(item)"
+        autocomplete="off"
+      />
+      {{ item.name }}
+    </label>
+  }
+</div>

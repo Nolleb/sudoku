@@ -10,6 +10,13 @@
     "@jridgewell/gen-mapping" "^0.3.5"
     "@jridgewell/trace-mapping" "^0.3.24"
 
+"@angular-architects/ngrx-toolkit@^19.1.0":
+  version "19.1.0"
+  resolved "https://registry.yarnpkg.com/@angular-architects/ngrx-toolkit/-/ngrx-toolkit-19.1.0.tgz#904560347642035a7d84b1f54893435d9fe06b11"
+  integrity sha512-R/1SB2QLNUy46tolXwct39lLgl1st0dsKr4uSgu2VUnp6gP7r6QsIKHcWah7PqlQu9ME8QXuQvkQN4nfN3xnJw==
+  dependencies:
+    tslib "^2.3.0"
+
 "@angular-devkit/architect@0.2000.4":
   version "0.2000.4"
   resolved "https://registry.yarnpkg.com/@angular-devkit/architect/-/architect-0.2000.4.tgz#ac21b6278daa4f101339c2921418c7677ae46998"
@@ -849,6 +856,13 @@
     "@napi-rs/nice-win32-arm64-msvc" "1.0.1"
     "@napi-rs/nice-win32-ia32-msvc" "1.0.1"
     "@napi-rs/nice-win32-x64-msvc" "1.0.1"
+
+"@ngrx/signals@^19.2.1":
+  version "19.2.1"
+  resolved "https://registry.yarnpkg.com/@ngrx/signals/-/signals-19.2.1.tgz#c31042956dc7d04d165cb593f090c3066025b7f7"
+  integrity sha512-Tajd2TVjkxxyFMhnMSWLa5pAWfynjP0VM0B/BCMaLiBrwBBxybxRVENoUDU5tGyiKSax/2tBJC3+sOglmxm27A==
+  dependencies:
+    tslib "^2.3.0"
 
 "@npmcli/agent@^3.0.0":
   version "3.0.0"
@@ -3397,7 +3411,7 @@ rollup@^4.34.9:
     "@rollup/rollup-win32-x64-msvc" "4.44.1"
     fsevents "~2.3.2"
 
-rxjs@7.8.2, rxjs@~7.8.0:
+rxjs@7.8.2, rxjs@^7.8.2:
   version "7.8.2"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-7.8.2.tgz#955bc473ed8af11a002a2be52071bf475638607b"
   integrity sha512-dhKf903U/PQZY6boNNtAGdWbG85WAbjT/1xYoZIC7FAY0yWapOBQVsVrDl58W86//e1VpMNBtRV4MaXfdMySFA==

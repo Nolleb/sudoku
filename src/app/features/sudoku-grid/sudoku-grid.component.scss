@@ -1,0 +1,57 @@
+$cell-size: 40px;
+$border-color: #000;
+$shadow: #bdc3c7;
+$selectedCell: lighten(#1ce, 40%);
+
+table {
+  border-collapse: collapse;
+  margin: 20px auto;
+}
+
+td {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid #999;
+  font-size: 18px;
+  &.selected-color {
+    background-color: $selectedCell;
+  }
+}
+
+tr {
+  &.selected-color {
+    background-color: $selectedCell;
+  }
+}
+
+.input-cell {
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  &.invalid-input {
+    border: 2px solid red;
+  }
+}
+
+/* Bold borders for 3x3 boxes */
+.border-top-bold {
+  border-top: 2px solid #000;
+}
+
+.border-left-bold {
+  border-left: 2px solid #000;
+}
+
+.border-bottom-bold {
+  border-bottom: 2px solid #000;
+}
+
+.border-right-bold {
+  border-right: 2px solid #000;
+}

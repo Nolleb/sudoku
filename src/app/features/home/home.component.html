@@ -1,0 +1,84 @@
+@let isGameLoaded = sudokuStore.isPuzzleLoaded();
+@let isLoading = sudokuStore.loading();
+@let isComplete = sudokuStore.isComplete();
+@let isGameOver = sudokuStore.isGameOver();
+
+
+@if(isLoading) {
+  <div class="home d-flex justify-content-center align-items-center">
+    <app-loader></app-loader>
+  </div>
+} @else if(isGameLoaded && !isStartModalOpen) {
+  @defer (on idle) {
+    <div class="home d-flex justify-content-center align-items-center gap-40">
+      <div class="home-grid">
+        <app-sudoku-grid></app-sudoku-grid>
+      </div>
+      <div>
+        <app-board></app-board>
+      </div>
+    </div>
+  } @placeholder {
+    <div class="home d-flex justify-content-center align-items-center">
+      <p>Preparing game board...</p>
+    </div>
+  }
+} @else {
+  <div class="home empty-container"></div>
+}
+
+<app-modal
+  [title]="'Jeu du Sudoku'"
+  [shown]="isStartModalOpen"
+  [showCloseModal]="false"
+>
+  <app-modal-creation-content
+    [createGameLabel]="'Commencer une partie'"
+    (gameCreated)="isStartModalOpen = false"
+  >
+    <div class="d-flex gap-20 justify-content-center">
+      Choisissez parmi 3 niveaux de difficulté
+    </div>
+  </app-modal-creation-content>
+</app-modal>
+
+<app-modal
+  [title]="'Jeu du Sudoku'"
+  [shown]="isComplete"
+  [showCloseModal]="false"
+>
+  @if (isGameLoaded) {
+    <app-modal-creation-content
+      [createGameLabel]="'Re-commencer une partie'"
+      (gameCreated)="isStartModalOpen = false"
+    >
+      <div class="d-flex gap-20 justify-content-center">
+        Félicitations, vous avez réussi à terminer le sudoku !
+      </div>
+    </app-modal-creation-content>
+  } @else {
+    <div class="modal-loading">
+      <app-loader></app-loader>
+    </div>
+}
+</app-modal>
+
+<app-modal
+  [title]="'Game Over'"
+  [shown]="isGameOver"
+  [showCloseModal]="false"
+>
+  @if (isGameLoaded) {
+    <app-modal-creation-content
+      [createGameLabel]="'Recommencer une partie'"
+    >
+      <div class="d-flex gap-20 justify-content-center">
+        La partie est finie, voulez-vous recommencer ?
+      </div>
+    </app-modal-creation-content>
+  } @else {
+    <div class="modal-loading">
+      <app-loader></app-loader>
+    </div>
+  }
+</app-modal>

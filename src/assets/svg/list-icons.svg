@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <symbol id="capsule" width="6.9252" height="30" viewBox="0 0 6.9252 30">
+      <g transform="matrix(.38516 0 0 .38516 -15.795 -4.256)">
+        <rect transform="rotate(90,50,50)" x="11.05" y="41.01" width="77.89" height="17.98" rx="4.98" ry="4.98"  fill="currentColor"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+

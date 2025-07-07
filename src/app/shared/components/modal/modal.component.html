@@ -1,0 +1,16 @@
+@if(shown()) {
+  <ng-container>
+    <div class="modal-container d-flex flex-direction-column">
+      <div class="modal-header d-flex justify-content-space-between align-items-center">
+        <h1>{{ title() }}</h1>
+        @if(showCloseModal()) {
+          <span class="close-button" (click)="closeModal()">X</span>
+        }
+      </div>
+      <div class="modal-content">
+        <ng-content></ng-content>
+      </div>
+    </div>
+    <div class="modal-backdrop" (click)="closeModal()"></div>
+  </ng-container>
+}
