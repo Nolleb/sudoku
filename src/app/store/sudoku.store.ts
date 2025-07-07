@@ -7,6 +7,7 @@ import {catchError, map, Observable, throwError} from 'rxjs';
 import {setAllEntities, updateEntity, withEntities} from '@ngrx/signals/entities';
 import {CellPosition, CellValue, sudokuPuzzleConfig} from './models/sudoku.models';
 import {updateErrorNb} from './sudoku.updaters';
+import {withLocalStorage} from "../custom-features/with-local-storage-feature";
 
 export const SudokuStore = signalStore(
   { providedIn: "root" },
@@ -37,18 +38,6 @@ export const SudokuStore = signalStore(
     const maxErrorNb = computed(() => store.maxErrorNb());
 
     const isGameOver = computed(() => store.errorNb() >= store.maxErrorNb())
-
-    const isComplete2 = computed(() => {
-      if(!isPuzzleFullyFilled()) {
-        return false
-      }
-      return cells().every(cell => {
-        if(cell.value === null) {
-          return false
-        }
-        return cell.value === cell.solutionValue
-      })
-    });
 
     const isComplete = computed(() => {
       if (!isPuzzleFullyFilled()) {
@@ -134,8 +123,6 @@ export const SudokuStore = signalStore(
       return value === null || (value >= 1 && value <= 9)
     },
 
-    //todo update difficulty
-
     updateCellValue(cellValue: CellValue, cellID: string) {
       const currentCell = store.puzzleMap()[cellID];
       patchState(store, updateEntity({
@@ -156,6 +143,6 @@ export const SudokuStore = signalStore(
       })
     }
   })),
-
+  withLocalStorage('sudoku-game'),
   withDevtools('sudoku'),
 );

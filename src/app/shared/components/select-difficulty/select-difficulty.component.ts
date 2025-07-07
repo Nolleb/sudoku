@@ -4,7 +4,8 @@ import {DifficultyItem} from '../../../store/sudoku.slice';
 @Component({
   selector: 'app-select-difficulty',
   templateUrl: './select-difficulty.component.html',
-  styleUrl: './select-difficulty.component.scss'
+  styleUrl: './select-difficulty.component.scss',
+  standalone: true
 })
 
 export class SelectDifficultyComponent implements OnInit {

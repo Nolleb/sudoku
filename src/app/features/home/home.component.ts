@@ -7,7 +7,6 @@ import {
   ModalCreationContentComponent
 } from '../../shared/components/modal-creation-content/modal-creation-content.component';
 import {SudokuStore} from '../../store/sudoku.store';
-import {JsonPipe} from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -19,8 +18,7 @@ import {JsonPipe} from '@angular/common';
     BoardComponent,
     LoaderComponent,
     ModalComponent,
-    ModalCreationContentComponent,
-    JsonPipe
+    ModalCreationContentComponent
   ]
 })
 

@@ -1,7 +1,10 @@
+@use "sass:color";
+
 $cell-size: 40px;
 $border-color: #000;
 $shadow: #bdc3c7;
-$selectedCell: lighten(#1ce, 40%);
+$ice-color: #1ce;
+$selectedCell: color.scale(#1ce, $lightness: 80%);
 
 table {
   border-collapse: collapse;
