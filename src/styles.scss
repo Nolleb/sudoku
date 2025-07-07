@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+//GENERICS
+@use './css/generic' as generic;
+
+//TOOLS
+@use './css/tools' as tools;
+
+//ELEMENTS
+@use './css/elements' as elements;
+
+//COMPONENTS
+@use './css/components' as components;
+
+//UTILS
+@use './css/utils' as utils;
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active{
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+  background-color: inherit !important;
+}
+
+//input:-internal-autofill-selected

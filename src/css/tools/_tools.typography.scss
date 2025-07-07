@@ -1,0 +1,6 @@
+@mixin roboto($value) {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: $value;
+  font-style: normal;
+}

@@ -1,0 +1,38 @@
+.modal-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  width: calc(100% - 60px);
+}
+
+.modal-header {
+  background-color: #263038;
+  color: #fff;
+  font-size: 20px;
+  width: 100%;
+  padding: 10px;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fff;
+  color: #263038;
+  width: 100%;
+  padding: 20px;
+}
+
+.close-button {
+  width: 30px;
+  text-align: center;
+  cursor: pointer;
+}

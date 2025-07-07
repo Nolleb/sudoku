@@ -1,0 +1,7 @@
+@mixin hocus() {
+    &:hover,
+    &:focus {
+        @content;
+    }
+}
+

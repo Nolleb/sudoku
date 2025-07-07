@@ -1,0 +1,49 @@
+@let nbErrors = sudokuStore.nbErrors();
+@let maxErrorNb = sudokuStore.maxErrorNb();
+@let displayDigitNumbers = boardStore.arrayValues();
+@let sudokuIsLoaded = sudokuStore.isPuzzleLoaded();
+
+<div class="board d-flex gap-60 justify-content-center align-items-center flex-direction-column">
+  <div class="digit-container">
+    @for(digit of displayDigitNumbers | keyvalue; track digit) {
+      <div class="d-flex align-items-center gap-5">
+        <strong>{{ digit.key }}</strong>
+        <app-rating
+          [color]="'#1ce'"
+          [fontSize]="'12px'"
+          [rating]="+digit.value"
+        ></app-rating>
+      </div>
+    }
+  </div>
+  <div class="d-flex gap-20 justify-content-center align-items-center flex-wrap-wrap">
+    <div class="button--fake">
+      Erreurs {{ nbErrors }} / {{ maxErrorNb }}
+    </div>
+    <button class="button" (click)="onClickRestart()">
+      Recommencer
+    </button>
+    <button class="button" (click)="onOpenModal()">
+      Nouvelle Partie
+    </button>
+  </div>
+</div>
+
+<app-modal
+  [title]="'Créer une nouvelle partie'"
+  [shown]="isModalVisible"
+  (isClosing)="isModalVisible = $event"
+>
+  @if (sudokuIsLoaded) {
+    <app-modal-creation-content
+      [createGameLabel]="'Générer une partie'"
+      (gameCreated)="isModalVisible = false"
+    >
+    </app-modal-creation-content>
+  } @else {
+    <div class="modal-loading">
+      <app-loader></app-loader>
+    </div>
+  }
+</app-modal>
+

@@ -1,0 +1,8 @@
+@for (number of numbers; track number) {
+  <div
+    [style]="{'background': rating() >= number + 1 ? color() : '#6a708c', 'font-size': fontSize()}"
+  >
+    <app-svg-container svgViewBox="0 0 7 30" svgWidth="7" svgHeight="30" iconName="capusle"></app-svg-container>
+  </div>
+}
+
